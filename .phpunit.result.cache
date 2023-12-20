@@ -1,0 +1,1 @@
+{"version":1,"defects":[],"times":{"ExampleTest::testAddingTwoPlusTwoResultsInFour":0.003,"FunctionTest::testAddReturnsTheCorrectSum":0.002,"FunctionTest::testAddDoesNotReturnTheIncorrectSum":0.004,"UserTest::testReturnsFullName":0.003,"UserTest::testFullNameIsEmptyByDefault":0.001,"UserTest::user_has_first_name":0}}
