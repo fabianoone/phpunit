@@ -20,11 +20,45 @@ class User
     public $last_name;
 
     /**
+     * User address
+     * @var string
+     */
+    public $email;
+
+    /**
+     * Mailer object
+     * @var Mailer
+     */
+    protected $mailer;
+
+    /**
+     * Set the mailer dependency
+     * 
+     * @param Mailer $mailer The Mailer object
+     */
+    public function setMailer(Mailer $mailer)
+    {
+        $this->mailer = $mailer;
+    }
+
+    /**
      * Get the user's full name from their first name and last name
      * @return string The user's full name
      */
     public function getFullName()
     {
         return trim("$this->first_name $this->last_name");
+    }
+
+    /**
+     * Send the user a message
+     * 
+     * @param string $message The message
+     * 
+     * @return boolean Ture if sent, false otherwise
+     */
+    public function notify($message)
+    {
+        return $this->mailer->sendMessage($this->email, $message);
     }
 }
